@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            rozdz = ["roz1", "roz2", "roz3", "roz4", "roz5", "roz6"];
+            function rozdzial(nr){
+                for (var x = 0; x < rozdz.length; x++){
+                    if (x+1 == nr){
+                        document.getElementById(rozdz[x]).classList.remove("hidden");
+                    } else {
+                        document.getElementById(rozdz[x]).classList.add("hidden");
+                        
+                    }
+                    //document.getElementById(rozdz[x]).style = 
+                        //(x+1 == nr) ? "display: block;" : "display: none;";
+                }
+            }
+        </script>
+        <style>
+            body {
+                background-color: #303030;
+                color: #E0E0E0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            h1 {
+                text-align: center;
+            }
+            h2 {
+                padding-top: 30px;
+                text-align: center;
+            }
+            h6 {
+                text-align: left;
+            }
+            img {
+                margin-left: auto;
+                display:block;
+                margin-right: auto;
+                padding-bottom: 5px;
+                width:80%;
+            }
+
+            .rozdz {
+                transform:translate(0);
+                opacity: 1;
+                transition: opacity 0.5s linear;
+            }
+
+            .hidden {
+                opacity: 0;
+                visibility: hidden;
+                height: 0px;
+                width: 0px;
+                overflow: hidden;
+            }
+
+            .spistresci {
+                padding-bottom: 40px;
+            }
+
+            .spistresci li {
+                font-size: 20px;
+            }
+            .spistresci a {
+                color: orange;
+            }
+            
+            .imgsmall {
+                width: 20%;
+            }
+            .list {
+                text-align: left;
+            }
+
+            .table_i {
+                width: 20%; 
+                display: inline-block;
+            }
+
+            .div50_main {
+                width: 100%;
+                float:left; 
+                display: block; 
+                clear:both;
+            }
+            .div50_1 {
+                width: 50%; 
+                display: inline-block;
+                vertical-align: top;
+            }
+            .div50_2 {
+                width: 49%; 
+                display: inline-block;
+                vertical-align: top;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin-left:20%; margin-right:20%;">
+            <div style="font-size:50px; margin-top:70px; margin-bottom:40px;">
+                Aplikacja fitness
+            </div>
+            <div>
+                <ol class="spistresci">
+                    <h2 style="text-align: left;">Spis treści</h2>
+                    <li><a href="#" onclick="rozdzial(1);">ANALIZA BIZNESOWA</a></li>
+                    <li><a href="#" onclick="rozdzial(2);">ANALIZA WYMAGAŃ NA SI</a></li>
+                    <li><a href="#" onclick="rozdzial(3);">ANALIZA FUNKCJONALNA SI</a></li>
+                    <li><a href="#" onclick="rozdzial(4);">MODELOWANIE ANALITYCZNE SI</a></li>
+                    <li><a href="#" onclick="rozdzial(5);">PROJEKT MODELU DANYCH SI</a></li>
+                    <li><a href="#" onclick="rozdzial(6);">MODELOWANIE DYNAMIKI SI</a></li>
+                </ol>
+            </div>
+            <!-- ROZDZIAŁ 1 -->
+            <div class=rozdz id="roz1">
+                <h1>1. ANALIZA BIZNESOWA</h1>
+                <h2>1.1 Wstęp teoretyczny</h2>
+                <div>
+                    Aplikacja fitness to narzędzie, które pomaga użytkownikom w prowadzeniu zdrowego trybu życia i osiąganiu swoich celów fitness. Działa ona na różnych platformach mobilnych, umożliwiając łatwy dostęp do treningów, monitorowania postępów oraz motywujących funkcji. Aplikacja oferuje różnorodne treningi, od siłowych i kardio, które można dostosować do indywidualnych preferencji i poziomu zaawansowania. Użytkownicy mają również możliwość śledzenia aktywności fizycznej, takiej jak liczba kroków, spalone kalorie i czas treningu, co pozwala im na kontrolę postępów i utrzymanie motywacji.
+                </div>
+
+                <h2>1.2 Opis kontekstu dziedziny problemowej</h2>
+                <div>
+                    Ludzie coraz bardziej zwracają uwagę na swoje zdrowie i kondycję, co prowadzi do wzrostu zapotrzebowania na narzędzia, które pomagają im w tym procesie.
+Wiele osób boryka się z wyzwaniami związanymi z motywacją, brakiem czasu czy niestabilnym planem treningowym. Aplikacje fitness wychodzą naprzeciw tym problemom, oferując użytkownikom elastyczność, wygodę i spersonalizowane rozwiązania.
+W kontekście dziedziny problemowej, aplikacje fitness stawiają sobie za cel dostarczenie użytkownikom różnorodnych treningów, które można dostosować do indywidualnych preferencji i poziomu zaawansowania
+                </div>
+
+                <h2>1.3 Kontekstowy diagram DPU</h2>
+                <img src="image001.png"> </img>
+                <h6>Diagram 01: Kontekstowy diagram DPU</h6>
+
+                <h2>1.4 Research aplikacji "7 minute workout"</h2>
+                <div>
+                    <div style="font-size:20px;">7 minute workout:</div>
+To aplikacja treningowa, która oferuje serię krótkich, intensywnych treningów o długości 7 minut. Aplikacja zawiera 12 ćwiczeń, które są wykonywane przez 30 sekund każde, z przerwami 10-sekundowymi między nimi. Celem aplikacji jest zapewnienie skutecznego treningu, który można wykonać w krótkim czasie. Aplikacja jedną z najpopularniejszych aplikacji treningowych dostępnych w sklepach z aplikacjami mobilnymi. Aplikacja została pobrana ponad 10 milionów razy i ma pozytywne oceny od użytkowników. 
+                </div>
+                <img style="margin-top:10px; margin-bottom:10px;" src="image003.png"></img>
+                <div>
+                    <div style="font-size:20px;">Scenariusz działania aplikacji "7 minute workout":</div>
+Pobranie i instalacja aplikacji: Użytkownik pobiera aplikację z odpowiedniego sklepu z aplikacjami mobilnymi i instaluje ją na swoim smartfonie. Wybór treningu: Po uruchomieniu aplikacji, użytkownik wybiera trening "7 minute workout" z listy dostępnych treningów. Rozpoczęcie treningu: Po wybraniu treningu, użytkownik rozpoczyna trening. Aplikacja pokazuje kolejne ćwiczenia, czas trwania każdego ćwiczenia i przerwy między nimi. Aplikacja również dostarcza wskazówek dotyczących poprawnej techniki wykonywania ćwiczeń. Wykonywanie ćwiczeń: Użytkownik wykonuje kolejne ćwiczenia, trzymając się wyznaczonego czasu i przerw między nimi. Aplikacja odlicza czas i zapewnia dźwiękowe powiadomienia o końcu każdego ćwiczenia i początku przerwy. 
+                </div>
+                <br>
+                <br>
+                <ul class="list"> <h3>Plusy:</h3>
+                    <li>Szybki i efektywny trening w krótkim czasie.</li>
+                    <li>Wygodny interfejs użytkownika i prosta nawigacja.</li>
+                    <li>Wbudowany licznik kalorii i funkcja monitorowania postępów</li>
+                    <li>Możliwość wykonywania treningów w dowolnym miejscu z dostępem do smartfona</li>
+                    <li>Dostępność aplikacji na różnych platformach mobilnych.</li>
+                    <li>Brak konieczności korzystania z dodatkowego sprzętu treningowego.</li> 
+                </ul>
+
+                <ul class="list"> <h3>Minusy:</h3>
+                    <li>Może być zbyt intensywny dla niektórych użytkowników.</li>
+                    <li>Nie uwzględnia różnych poziomów zaawansowania.</li> 
+                    <li>Brak treningu siłowego i wytrzymałościowego.</li>
+                    <li>Może nie dostarczyć wystarczającego wyzwania dla bardziej zaawansowanych użytkowników.</li>
+                    <li>Nie oferuje personalizacji treningów na podstawie celów i preferencji użytkowników.</li>
+                    <li>Może nie być wystarczająco skuteczny dla osób, które potrzebują bardziej zindywidualizowanego podejścia do treningu.</li>
+                </ul>
+
+            </div>
+
+            <!-- ROZDZIAL 2 -->
+            <div class=rozdz id="roz2">
+                <h1>2. ANALIZA WYMAGAŃ NA SI</h1>
+
+                <h2>2.1 Tytuł projektowanego systemu</h2>
+                <div>Aplikacja fitness</div>
+
+                <h2>2.2 Cel i opis podstawowych zadań szczegółowych</h2>
+                <div>Celem aplikacji fitness jest dostarczenie użytkownikom narzędzi i zasobów, które pomagają im prowadzić zdrowy tryb życia, osiągać cele fitness i utrzymywać motywację do regularnego treningu. Aplikacja ma służyć jako wsparcie w rozwoju siły, kondycji.
+                    <br>Opis podstawowych zadań szczegółowych:
+                </div>
+                <ol>
+                    <li>Użytkownik po zainstalowaniu aplikacji jest proszony o wypełnienie informacji o sobie takich jak: płeć, waga, wzrost, doświadczenie z treningami oraz cel do którego dąży.</li>
+                    <li>Na podstawie informacji z pierwszego punktu jest tworzony plan treningowy, który może zostać zmodyfikowany pod względem ćwiczeń, powtórzeń, serii. </li>
+                    <li>Aplikacja wysyła przypomnienia użytkownikowi o treningu oraz motywuje go do działania w postaci postępu treningowego oraz kalendarzowi odbytych treningów.</li>
+                    <li>Użytkownikowi podczas treningu wyświetla się czas trwania treningu, nazwa ćwiczenia, numer serii i instruktaż jak dane ćwiczenie powinno zostać wykonane pod względem efektywności. Po wykonanej serii użytkownik klika znak plusa aby dodać wykonaną serię, po czym włącza się stoper na przerwę między seriami. Po wykonanej ostatniej serii danego ćwiczenia aplikacja przełącza na kolejne ćwiczenie aż do ukończenia treningu. </li>
+                    <li>Użytkownik może połączyć aplikację z smartwatchem, dzięki czemu może śledzić tętno, kroki, przebyty dystans i poziom spO2 oraz monitorować jakość snu.</li>
+                    <li>Dzięki kalendarzowi użytkownik może wrócić do wcześniejszych dni i sprawdzać treningi</li>
+                </ol>
+
+                <h2>2.3 Systemowy słownik danych</h2>
+                <div>
+                    Administrator - osoba odpowiedzialna za zarządzanie, kontrolę i utrzymanie systemu.<br>
+Ćwiczenia - aktywności ruchowe, które pomagają użytkownikowi osiągnąć cel.<br>
+Dane - zbiór informacji o użytkowniku dostarczanych bezpośrednio od niego lub przez urządzenie inteligentne.<br>
+Historia - ćwiczenia wykonane przez użytkownika w ramach używania aplikacji.<br>
+Inteligentny zegarek - urządzenie umożliwiające monitorowanie aktywności fizycznej.<br>
+Karta kredytowa - forma płatności wymagająca współpracy z systemem płatności obsługującym karty kredytowe.<br>
+Klient - osoba korzystająca z usług aplikacji.<br>
+Plan - spersonalizowany zestaw ćwiczeń i aktywności fizycznych, opracowany, aby pomóc użytkownikowi w osiągnięciu celu.<br>
+Plan- zamierzony wynik, jaki użytkownik chce osiągnąć dzięki regularnym ćwiczeniom.<br>
+Przelewy24 - forma płatności wymagająca współpracy z systemem Przelewy24.<br>
+Subskrypcja - model płatności, w ramach którego użytkownik płaci regularną opłatę.<br>
+Trening - sesja ćwiczeń odbywana przez użytkownika.<br>
+Użytkownik aplikacji - osoba podlegająca autoryzacji w systemie = (adres email) + (hasło) + (data urodzenia).<br>
+Zdrowie - zbiór parametrów życiowych użytkownika dostarczanych przez urządzenie inteligentne.<br>
+                </div>
+            </div>
+
+            <!-- ROZDZIAL 3 -->
+            <div class=rozdz id="roz3">
+                <h1>3. ANALIZA FUNKCJONALNA SI</h1>
+
+                <h2>3.1 Opisany model systemowy SI</h2>
+                <img src="image005.png"></img>
+                <h6>Diagram 02: Diagram Przypadków Użycia</h6>
+            </div>
+
+            <!-- ROZDZIAL 4 -->
+            <div class=rozdz id="roz4">
+                <h1>4. MODELOWANIE ANALITYCZNE SI</h1>
+
+                <h2>4.1 Model Analityczny SI</h2>
+                <img src="image9.png"></img>
+                <h6>Diagram 03: Diagram analityczny</h6>
+            </div>
+
+            <!-- ROZDZIAL 5 -->
+            <div class=rozdz id="roz5">
+                <h1>5. PROJEKT MODELU DANYCH SI</h1>
+
+                <h2>5.1 Implementacyjny diagram klas</h2>
+                <img src="image29.png"></img>
+                <h6>Diagram 04: Diagram klas</h6>
+
+                <h2>5.2 Diagram obiektów dla następującej sytuacji</h2>
+                <div ><i>“Pan Andrzej kupił subskrypcję Aplikacji Fitness na okres 1 miesiąca poprzez system Przelewy 24.
+                    Po uruchomieniu aplikacji Andrzej wypełnił formularz dotyczący jego osoby wcześniej wybierając jako swój cel - "Zrzucić wagę". Mężczyzna chcąc wygenerować plan, zaznaczył poniedziałek, środę oraz sobotę po czym zostały mu przedstawione sugerowane plany treningowe. Panu Andrzejowi nie spodobał się zestaw ćwiczeń na środę z powodu kontuzji kolana, więc zamienił ćwiczenie "Przysiady ze sztangą" na "Wykroki z hantlami" w systemie 4x10 powtórzeń.
+                    Następnego dnia (Poniedziałek) mężczyźnie przyszło powiadomienie o treningu, więc wybrał się na siłownie i wybrał opcję "Rozpocznij trening", zostało mu wyświetlone ćwiczenie wraz z instruktażem i wytycznymi. Po treningu Pan Andrzej wyświetlił spalone kalorie, chcąc wiedzieć jak bardzo przyłożył się do treningu.”
+                </i></div>
+                <img src="image31.png"></img>
+                <h6>Diagram 05: Diagram obiektu</h6>  
+            </div>
+
+            <!-- ROZDZIAL 6 -->
+            <div class=rozdz id="roz6">
+                <h1>6. MODELOWANIE DYNAMIKI SI</h1>
+                
+                <h2>6.1 Wybierz Program</h2>
+                <img src="image18.png"></img>
+                <h6>Diagram 06: Diagram Sekwencji dla wyboru diagramu</h6>
+
+                <img src="image11.png"></img>
+                <h6>Diagram 07: Diagram analityczny dla wybierz program</h6>
+
+                <img class="imgsmall" src="image24.png"></img>
+                <h6>Tabela 01: Scenariusz PU - Wybierz program</h6>
+
+                <img src="image41.png"></img>
+                <h6>Interfejs 01: Wybierz program</h6>
+
+                <div>
+                    Diagram czynności 1: Wybierz program
+                    <ol>
+                        <li>System wyświetla parametry do ustalenia</li>
+                        <li>Użytkownik wybiera cel</li>
+                        <li>Użytkownik wybiera swoją wagę</li>
+                        <li>Użytkownik podaje swój wiek i wzrost</li>
+                        <li>Użytkownik podaje typ sylwetki</li>
+                        <li>Użytkownik wybiera częstotliwość treningu</li>
+                        <li>Użytkownik wskazuje swoje doświadczenie</li>
+                        <li>System zapisuje odpowiedzi</li>
+                        <li>System generuje plan treningowy</li>
+                        <li>System wyświetla plan </li>
+                        <li>Użytkownik zatwierdza plan</li>
+                    </ol>
+
+                    Ścieżka poboczna 10a:
+                    <ol>
+                        <li>System wyświetla plan</li>
+                        <li>Użytkownik wybiera opcję “edytuj plan”</li>
+                        <li>Użytkownik wybiera ćwiczenia do dodania/usunięcia</li>
+                        <li>System aktualizuje plan według preferencji użytkownika</li>
+                        <li>System przekierowuje użytkownika do 10 ścieżki</li>
+                    </ol>
+
+                    Ścieżka poboczna 10b:
+                    <ol>
+                        <li>System wyświetla plan</li>
+                        <li>Użytkownik wybiera opcję “wprowadź na nowo”</li>
+                        <li>System usuwa obecnie wprowadzone informację</li>
+                        <li>System przekierowuje użytkownika do 1 ścieżki</li>
+                    </ol>
+                </div>
+
+                <h2>6.2 Generuj plan</h2>
+                <img src="image34.png"></img>
+                <h6>Diagram 08: Diagram Sekwencji - generuj plan</h6>
+
+                <img src="image28.png"></img>
+                <h6>Diagram 09: Diagram analityczny- generuj plan</h6>
+
+                <div style="float:left; width: 100%; clear: both;">
+                    <div class=table_i>
+                        <img src="image8.png"></img>
+                    </div>
+
+                    <div class=table_i>
+                        <img src="image24.png"></img>
+                    </div>
+
+                    <div class="table_i">
+                        <img src="image16.png"></img>
+                    </div>
+
+                    <div class=table_i>
+                        <img src="image21.png"></img>
+                    </div>
+
+                    <div class="table_i">
+                        <img src="image22.png"></img>
+                    </div>
+
+                    <div class="table_i">
+                        <img src="image32.png"></img>
+                    </div>
+                    <h6>Tabele: Scenariusz PU - Generuj plan</h6>
+                </div>
+
+                <img src="image30.png"></img>
+                <h6>Interfejsy 02: Generuj plan</h6>
+
+                <img src="image36.png"><img>
+                <h6>Diagram czynności 02: Generuj plan</h6>
+
+                <ol><h3>Ścieżka główna:</h3>
+                    <li>System wyświetla dostępne opcję dostosowania planu</li>
+                    <li>Użytkownik wybiera preferowane dni</li>
+                    <li>System generuj listę ćwiczeń</li>
+                    <li>System wyświetla listę ćwiczeń</li>
+                    <li>Użytkownik zatwierdza listę ćwiczeń</li>
+                    <li>System zapisuje informacje o bazy danych</li>
+                </ol>
+
+                <ol><h3>Ścieżka poboczna 5a:</h3>
+                    <li>System wyświetla listę ćwiczeń</li>
+                    <li>Użytkownik wybiera opcję “edytuj listę”</li>
+                    <li>System wyświetla listę dostępnych ćwiczeń</li>
+                    <li>Użytkownik dodaje/usuwa ćwiczenia z listy</li>
+                    <li>System zapisuje plan zgodnie z preferencjami</li>
+                    <li>System przekierowuje do punktu 5 ścieżki głównej</li>
+                </ol>
+
+
+                <h2>6.3 Wprowadź ćwiczenie</h2>
+                <img src="image15.png"></img>
+                <h6>Diagram 10: Diagram Sekwencji -Wprowadź ćwiczenie</h6>
+
+                <img src="image6.png"></img>
+                <h6>Diagram 11:Diagram analityczny- Wprowadź ćwiczenie</h6>
+
+                <img class="imgsmall" src="image21.png"></img>
+                <h6>Tabela 08: Scenariusz PU - Wprowadź ćwiczenie</h6>
+
+                <img src="image27.png"></img>
+                <h6>Interfejs 03: Wprowadź ćwiczenie</h6>
+
+                <div class="div50_main">
+                    <div class="div50_1">
+                        <img src="image33.png">
+                        <h6>Diagram czynności 03: Wprowadź ćwiczenie</h6>
+                    </div>
+
+                    <div class="div50_2">
+                        <ol><h3>Ścieżka główna:</h3>
+                            <li>System wyświetla obecnie znajdujące się w systemie ćwiczenia</li>
+                            <li>Administrator wylogowuje się z systemu</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 2a:</h3>
+                            <li>System wyświetla obecnie znajdujące się w systemie ćwiczenia</li>
+                            <li>Administrator wybiera opcję “dodaj ćwiczenie”</li>
+                            <li>Administrator wprowadza nowe ćwiczenie do bazy danych</li>
+                            <li>System aktualizuje bazę danych</li>
+                            <li>System przekierowuje do punktu 1 ścieżki głównej</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 2b:</h3>
+                            <li>System wyświetla obecnie znajdujące się w systemie ćwiczenia</li>
+                            <li>Administrator wybiera opcję “zmień istniejące”</li>
+                            <li>Administrator modyfikuje wprowadzone ćwiczenie</li>
+                            <li>System aktualizuje w bazie danych</li>
+                            <li>System przekierowuje do punktu 1 ścieżki głównej</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 2c:</h3>
+                            <li>System wyświetla obecnie znajdujące się w systemie ćwiczenia</li>
+                            <li>Administrator wybiera opcję “usuń istniejące”</li>
+                            <li>Administrator usuwa istniejące ćwiczenie</li>
+                            <li>System aktualizuje bazę danych</li>
+                            <li>System przekierowuje do punktu 1 ścieżki głównej</li>
+                        </ol>
+                    </div>
+                </div>
+
+
+                <h2>6.4 Rozpocznij trening</h2>
+                <img src="image42.png">
+                <h6>Diagram 12: Diagram Sekwencji - Rozpocznij trening</h6>
+
+                <img src="image43.png">
+                <h6>Diagram 13:Diagram analityczny- Rozpocznij trening</h6>
+
+                <div style="float:left; width: 100%; clear: both;">
+                    <img class="table_i" src="image8.png">
+                    
+                    <img class="table_i" src="image22.png">
+
+                    <img class="table_i" src="image21.png">
+
+                    <img class="table_i" src="image16.png">
+
+                    <img class="table_i" src="image32.png">
+
+                    <h6>Tabele: Scenariusz PU - Rozpocznij trening</h6> 
+                </div>
+
+                <img src="image37.png">
+                <h6>Interfejs 09: Rozpocznij trening</h6>
+                
+                <div class="div50_main">
+                    <div class="div50_1">
+                        <img src="image40.png">
+                        <h6>Diagram czynności 14: Rozpocznij trening</h6>
+                    </div>
+
+                    <div class="div50_2">
+                        <ol><h3>Ścieżka główna:</h3>
+                            <li>System wyświetla informację o obecnym treningu</li>
+                            <li>Użytkownik kontynuuje trening</li>
+                            <li>Użytkownik kończy trening</li>
+                            <li>System wyświetla i zapisuje informację o treningu w bazie danych</li>
+                            <li>Użytkownik wraca do ekranu głównego</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 2a:</h3>
+                            <li>System wyświetla informację o obecnym treningu</li>
+                            <li>Użytkownik wybiera opcję “zatrzymaj trening”</li>
+                            <li>Użytkownik tymczasowo zatrzymuje trening</li>
+                            <li>System aktualizuje stan treningu</li>
+                            <li>Użytkownik wzniawia trening</li>
+                            <li>System przekierowuje do punktu 1 ścieżki głównej</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 2b:</h3>
+                            <li>System wyświetla informację o obecnym treningu</li>
+                            <li>Użytkownik wybiera opcję “otwórz szczegóły ćwiczenia”</li>
+                            <li>Użytkownik otwiera szczegóły ćwiczenia</li>
+                            <li>System wyświetla szczegóły ćwiczenia</li>
+                            <li>Użytkownik zamyka szczegóły ćwiczenia</li>
+                            <li>System przekierowuje do punktu 1 ścieżki głównej</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h2>6.5 Wyświetl historię</h2>
+
+                <img src="image5.png">
+                <h6>Diagram 15: Diagram Sekwencji - Wyświetl historię</h6>
+
+                <img src="image4.png">
+                <h6>Diagram 16: Diagram analityczny- Wyświetl historię</h6>
+
+                <img class="imgsmall" src="image13.png">
+                <h6>Tabela 15: Scenariusz PU -  Wyświetl historię</h6>
+
+                <img src="image19.png">
+                <h6>Interfejs 05: Wyświetl historię</h6>
+
+                <div class="div50_main">
+                    <div class="div50_1">
+                        <img src="image14.png">
+                        <h6>Diagram czynności 17: Wyświetl historię</h6>
+                    </div>
+
+                    <div class="div50_2">
+                        <ol><h3>Ścieżka główna:</h3>
+                            <li>System odczytuje z bazy danych informację o poprzednich treningach</li>
+                            <li>System wyświetla znalezione informację o treningach</li>
+                            <li>Użytkownik wraca do poprzedniego ekranu</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 3a:</h3>
+                            <li>System wyświetla znalezione informację o treningach</li>
+                            <li>Użytkownik wybiera opcję “sortuj/filtruj historię”</li>
+                            <li>System wyszukuje poprzednie treningu na podstawie ustawień </li>
+                            <li>System przekierowuje użytkownika do punktu 2 ścieżki głównej</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h2>6.6 Opłać subskrypcję</h2>
+
+                <img src="image23.png">
+                <h6>Diagram 18: Diagram Sekwencji - Opłać subskrypcję</h6>
+
+                <img src="image12.png">
+                <h6></h6>
+
+                <img class=imgsmall src="image26.png">
+                <h6>Tabela 16: Scenariusz PU- Opłać subskrypcję</h6>
+
+                <img src="image2.png">
+                <h6>Interfejs 06: Opłać subskrypcję</h6>
+
+                <div class="div50_main">
+                    <div class="div50_1">
+                        <img src="image17.png">
+                        <h6>Diagram czynności 19: Opłać subskrypcję</h6>
+                    </div>
+
+                    <div class="div50_2">
+                        <ol><h3>Ścieżka główna:</h3>
+                            <li>System wyświetla możliwe opcje subskrypcji</li>
+                            <li>Użytkownik wybiera jedną z możliwych opcji</li>
+                            <li>System wyświetla dostępne formy płatności</li>
+                            <li>Użytkownik wybiera płatność kartą kredytową</li>
+                            <li>System wyświetla ekran wprowadzenia danych do płatności</li>
+                            <li>Użytkownik podaje dane do płatności</li>
+                            <li>System wysyła żądanie z danymi do płatności do systemu operatora kart</li>
+                            <li>System operatora kart wysyła odpowiedź o udanej płatności</li>
+                            <li>System aktualizuje stan subskrypcji użytkownika w bazie danych</li>
+                            <li>Użytkownik wraca do ekranu głównego</li>
+                        </ol>
+                        
+                        <ol><h3>Ścieżka poboczna 2a</h3>
+                            <li>Użytkownik wraca do ekranu głównego</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 4a</h3>
+                            <li>Użytkownik wybiera płatność poprzez system Przelewy24</li>
+                            <li>System przekierowuje użytkownika do strony płatności Przelewy24</li>
+                            <li>System otrzymuje odpowiedź od systemu Przelewy24 o stanie płatności</li>
+                            <li>System przekierowuje do punktu 9 ścieżki głównej</li>
+                        </ol>
+
+
+                        <ol><h3>Ścieżka poboczna 4b</h3>
+                            <li>Użytkownik wraca do poprzedniego ekranu</li>
+                            <li>System zamyka stronę</li>
+                        </ol>
+
+                        <ol><h3>Ścieżka poboczna 8a</h3>
+                            <li>System operatora kart wysyła odpowiedź o nieudanej płatności</li>
+                            <li>System przekierowuje do punktu 9 ścieżki głównej</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h2>6.7 Monitoruj zdrowie</h2>
+
+                <img src="image35.png">
+                <img class=imgsmall src="image20.png">
+                <img src="image39.png">
+
+                <div class="div50_main">
+                    <div class="div50_1">
+                        <img src="image38.png">
+                    </div>
+
+                    <div class="div50_2">
+                        <ol><h3>Ścieżka główna:</h3>
+                            <li>System wyświetla informacje przesyłane przez urządzenie inteligentne</li>
+                            <li>Użytkownik wraca do poprzedniego ekranu</li>
+                        </ol>
+
+
+                        <ol><h3>Ścieżka poboczna 1a:</h3>
+                            <li>System wyświetla informacje przesyłane przez urządzenie inteligentne</li>
+                            <li>System wyświetla szczegóły</li>
+                            <li>Użytkownik zamyka szczegóły</li>
+                            <li>system przekierowywuje do 1 punktu ścieżki głównej</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script language="javascript">
+            document.onload = rozdzial(0);
+        </script>
+    </body>
+</html>
